@@ -2,12 +2,30 @@
   let filtre__bouton = document.querySelectorAll('.filtre__bouton button')
   console.log(filtre__bouton.length);
 
-  for(const elm of filtre__bouton){
-    elm.addEventListener('click', function(e){
-      const categorie = e.target.dataset.id; 
-      console.log("Catégorie sélectionnée:", categorie);
-      extraire_article(categorie);
-    })
+  const pays = [
+    "France",
+    "États-Unis",
+    "Canada",
+    "Argentine",
+    "Chili",
+    "Belgique",
+    "Maroc",
+    "Mexique",
+    "Japon",
+    "Italie",
+    "Islande",
+    "Chine",
+    "Grèce",
+    "Suisse",
+  ];
+
+  for (const elm of filtre__bouton) {
+    elm.addEventListener("click", function (e) {
+      const paysIndex = e.target.dataset.id;
+      const paysNom = pays[paysIndex];
+      console.log("Pays sélectionné:", paysNom);
+      extraire_pays(paysNom);
+    });
   }
 
   function extraire_article(categorie) {
