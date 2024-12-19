@@ -1,6 +1,6 @@
 <?php
 /*
-plugin name: Filtre Post
+plugin name: Filtre Pays
 author: Roxanne Auclair
 description: Une extension qui permettra de filtrer nos articles
 */ 

@@ -52,20 +52,21 @@
     sectionArticles.innerHTML = "";
 
     if (data.length === 0) {
-      sectionArticles.innerHTML =
-        "<p>Aucun article trouvé pour cette catégorie.</p>";
+      sectionArticles.innerHTML = "<p>Aucun article trouvé pour ce pays.</p>";
       return;
     }
 
-    const articlesHTML = data.map((article) => {
-      return `
+    const articlesHTML = data
+      .map((article) => {
+        return `
         <article class="article">
           <h2>${article.title.rendered}</h2>
           <div class="article__contenu">${article.excerpt.rendered}</div>
           <a href="${article.link}" target="_blank" class="article__lien">Lire la suite</a>
         </article>
       `;
-    }).join('');
+      })
+      .join("");
 
     sectionArticles.innerHTML = articlesHTML;
   }
