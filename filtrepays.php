@@ -11,14 +11,14 @@ function charger_scripts_css(){
     $version_js = filemtime(plugin_dir_path(__FILE__) . "/js/filtrepays.js");
  
     wp_enqueue_style(
-        "filtrepost",        
+        "filtrepays",        
         plugin_dir_url(__FILE__) . "/style.css",
         array(),
         $version_css
     );  
  
     wp_enqueue_script(
-        "filtrepost",      
+        "filtrepays",      
         plugin_dir_url(__FILE__) . "/js/filtrepays.js",
         array(),
         $version_js,
