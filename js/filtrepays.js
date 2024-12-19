@@ -28,24 +28,24 @@
     });
   }
 
-  function extraire_article(categorie) {
-    fetch(
-      `http://localhost/31W/wp-json/wp/v2/posts?categories=${categorie}&per_page=30`
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Erreur HTTP ! statut : ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log("Articles récupérés:", data);
-        afficherArticles(data); 
-      })
-      .catch((error) =>
-        console.error("Erreur lors de l'extraction des articles", error)
-      );
-  }
+ function extraire_pays(paysNom) {
+   fetch(
+     `http://localhost/31W/wp-json/wp/v2/posts?filter[pays]=${paysNom}&per_page=30`
+   )
+     .then((response) => {
+       if (!response.ok) {
+         throw new Error(`Erreur HTTP ! statut : ${response.status}`);
+       }
+       return response.json();
+     })
+     .then((data) => {
+       console.log("Articles récupérés:", data);
+       afficherArticles(data);
+     })
+     .catch((error) =>
+       console.error("Erreur lors de l'extraction des articles", error)
+     );
+ }
 
   function afficherArticles(data) {
     const sectionArticles = document.querySelector(".filtre__articles");
